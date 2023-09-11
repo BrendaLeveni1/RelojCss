@@ -1,0 +1,100 @@
+
+  .clock{
+    width: 25rem;
+    height: 25rem;
+    border: 3px solid black; 
+    background-color: #f7a79f;
+    border-radius: 50%;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto; 
+    padding: auto;
+  }
+  
+  .hora,
+  .minuto,
+  .segundo {
+    position: absolute;
+    transform-origin: bottom;
+  }
+  
+  .hora {
+    width: 5px;
+    height: 70px;
+    background-color:black;
+    top: calc(50% - 70px);
+    left: calc(50% - 1px);
+    transform-origin: bottom;
+}
+
+.minuto {
+    width: 3px;
+    height: 120px;
+    background-color:black;
+    top: calc(50% - 120px);
+    left: calc(50% - 1px);
+    transform-origin: bottom;
+}
+
+.segundo {
+    width: 1px;
+    height: 140px;
+    top: calc(50% - 140px);
+    left: calc(50% - 0.5px);
+    background-color:red;
+    transform-origin: bottom;
+}
+
+.centro {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    position: absolute;
+    top: calc(50% - 5px);
+    left: calc(50% - 5px);
+}
+  
+  /*Animacion*/
+  @keyframes rotarHora {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  @keyframes rotarMinuto {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  @keyframes rotarSegundo {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  
+  /* 3600s(minuto)*12 horas = 43200s */
+  .hora {
+    animation: rotarHora 43200s steps(43200) infinite;
+  }
+  /* 60s*60min */
+  .minuto {
+    animation: rotarMinuto 3600s steps(3600) infinite;
+  }
+  
+  
+  /* la animación se  ejecuta en 60 segundos
+  se debe de realizar en 60 frames*/
+  .segundo {
+    animation: rotarSegundo 60s steps(60) infinite;
+  }
